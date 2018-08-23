@@ -69,6 +69,7 @@ def table_rank(series):
     return result.sort_values(ascending=False)
 
 
+
 # https://gist.github.com/himzzz/4105717
 # tf-idf 사용자 함수
 import re
