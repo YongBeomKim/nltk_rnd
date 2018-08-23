@@ -1,6 +1,6 @@
 # nltk r&amp;d Tutorial
 
-[강의 슬라이드](https://www.slideshare.net/YBkim2/rd-111078581)
+[**강의 슬라이드**](https://www.slideshare.net/YBkim2/rd-111078581)
 
 서울R&amp;D캠퍼스 자연어 수업에 활용할 **Jupyter Notebook** 과 **[슬라이드](https://www.slideshare.net/YBkim2/rd-111078581)** 자료입니다. 
 
