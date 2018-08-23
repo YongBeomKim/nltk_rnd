@@ -7,7 +7,7 @@
 
 ## >> <small>Konlpy 설치시 **JPype1 오류**로 **MS C++ 설치**를 요구하는 경우</small>
 
-[JPype Whl 설치파일](https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype) 을 다운받아서 **pip install JPype...** 설치하면 해결 가능합니다</small>
+JPype Whl 설치파일[다운](https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype) 을 다운받은 뒤 **pip install JPype...** 설치를 하시면 해결 가능합니다</small>
 
 ## >> <small>테스트 환경</small>
 
