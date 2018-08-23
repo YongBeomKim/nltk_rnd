@@ -4,8 +4,10 @@
 
 서울R&amp;D캠퍼스 자연어 수업에 활용할 **Jupyter Notebook** 과 **[슬라이드](https://www.slideshare.net/YBkim2/rd-111078581)** 자료입니다. 
 
-<small>Konlpy 설치시 JPype1 오류로 **MS C++ 설치**를 요구하는 경우, [JPype Whl 설치파일](https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype) 을 다운받아서 **pip install JPype...** 설치하면 해결 가능합니다</small>
 
+## Konlpy 설치시 JPype1 오류로 **MS C++ 설치**를 요구하는 경우
+
+[JPype Whl 설치파일](https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype) 을 다운받아서 **pip install JPype...** 설치하면 해결 가능합니다</small>
 
 
 ## 테스트 환경
