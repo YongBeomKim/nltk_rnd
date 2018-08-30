@@ -1,8 +1,8 @@
 # nltk r&amp;d Tutorial
 
-**[강의 슬라이드](https://www.slideshare.net/YBkim2/rd-112248574)**
+**[강의 슬라이드](https://www.slideshare.net/YBkim2/rd-112256981)**
 
-서울R&amp;D캠퍼스 자연어 수업에 활용할 **Jupyter Notebook** 과 [슬라이드](https://www.slideshare.net/YBkim2/rd-112248574) 자료입니다. 
+서울R&amp;D캠퍼스 자연어 수업에 활용할 **Jupyter Notebook** 과 [슬라이드](https://www.slideshare.net/YBkim2/rd-112256981) 자료입니다. 
 
 
 ## > <small>Konlpy 설치시 **JPype1 오류**로 **MS C++ 설치**를 요구하는 경우</small>
