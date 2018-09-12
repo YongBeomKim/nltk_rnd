@@ -39,8 +39,8 @@ def txtnoun(filename , skip=False, tokens=False):
 
             # skip 내용이 있을 때
             else:
-                if token in skip:
-                    result.append(token)
+                if token in list(skip.keys()):
+                    result.append(skip[token])
                 else:
                     temp = twitter.nouns(token)
                     if len("".join(temp)) > 1:
@@ -126,7 +126,7 @@ def table_rank(series):
 #         noun_token.append(token)
 #     else:
 #         token_pos = twitter.pos(token)
-#         temp      = [txt_tag[0]   for txt_tag in token_pos  
+#         temp      = [txt_tag[0]   for txt_tag in token_pos
 #                                   if txt_tag[1] == 'Noun']
 #         if len("".join(temp)) > 1:
 #             noun_token.append("".join(temp))
