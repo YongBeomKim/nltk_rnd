@@ -58,8 +58,8 @@ class sequence2sequence:
     def cell(self, n_hidden, output_keep_prob):
 
         # RNNCell을  BasicLSTMCell / LSTMCell 을 사용하여 구현 가능합니다.
-        #rnn_cell = tf.contrib.rnn.BasicRNNCell(self.n_hidden)
-        rnn_cell = tf.contrib.rnn.BasicLSTMCell(self.n_hidden)
+        rnn_cell = tf.contrib.rnn.BasicRNNCell(self.n_hidden)
+        #rnn_cell = tf.contrib.rnn.BasicLSTMCell(self.n_hidden)
 
         rnn_cell = tf.contrib.rnn.DropoutWrapper(
             rnn_cell, output_keep_prob = output_keep_prob)
