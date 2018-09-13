@@ -1,8 +1,6 @@
 Chatbot with Sequence-to-sequence Model Based on Recurrent Neural Network
 ============================================================
-by SangMin Lee
-
-[Git Hub](https://github.com/phantasmicmeans/ChatbotModel)
+by SangMin Lee [Git Hub](https://github.com/phantasmicmeans/ChatbotModel)
 
 
 >**Development Environment**
