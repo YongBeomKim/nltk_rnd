@@ -2,13 +2,15 @@ Chatbot with Sequence-to-sequence Model Based on Recurrent Neural Network
 ============================================================
 by SangMin Lee
 
+[Git Hub](https://github.com/phantasmicmeans/ChatbotModel)
+
+
 >**Development Environment**
 > - Ubuntu 16.04
 > - Tensorflow-gpu 1.3.0
 > - python 3.6.2
     - konlpy 0.4.4
         - JPype1 0.6.2   
-> - Django 2.0
 
 
 # Data preprocessing
@@ -20,7 +22,6 @@ by SangMin Lee
    - builb_voc.py에서 주석 삭제,
    - Conversation.py, chat.py에 주석을 삭제.
    - 그리고 다시 아래의 과정 1부터 진행
-
 
 
 # Process
@@ -41,18 +42,6 @@ by SangMin Lee
 3. chat
 
     * $python chat.py
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -89,5 +78,3 @@ by SangMin Lee
 
 #### 나머지 세부사항은 config에서 확인 하실 수 있습니다. ####
 #### Please check the config file ####
-
-
