@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 import os, math, sys
-os.environ["CUDA_VISIBLE_DEVICES"]="4"
+#os.environ["CUDA_VISIBLE_DEVICES"]="4"
 
 from model import sequence2sequence
 import config
