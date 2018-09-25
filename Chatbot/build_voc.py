@@ -1,10 +1,10 @@
-from konlpy.tag import Okt
 import tensorflow as tf
 import numpy as np
 import config
 from  Conversation import Conversation
 
 # --twitter 사용시 이 함수 주석을 전부 풀어주고 아래는 주석처리
+#from konlpy.tag import Okt
 #twitter = Okt()
 #def Make_voc(data_path,voc_path):
 #    words = []

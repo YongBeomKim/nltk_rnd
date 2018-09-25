@@ -1,6 +1,6 @@
 # 텍스트를 줄단위로 끊어서 불러온뒤
 # Token 단위로, 한글명사들을 추출한다
-def txtnoun(filename , skip=False, tokens=False):
+def txtnoun(filename , skip=False, tags=['Noun'], stem=True, tokens=False):
 
     try:
         # konlpy 0.4.4 이하인 경우
@@ -24,7 +24,7 @@ def txtnoun(filename , skip=False, tokens=False):
 
     result = []
     for content in contents:
-        texts     = content.replace('\n', ' ') # 해당줄의 줄바꿈 내용 제거
+        texts     = content.replace('\n', '') # 해당줄의 줄바꿈 내용 제거
         tokenizer = re.compile(r'[^ ㄱ-힣]+')   # 한글과 띄어쓰기를 제외한 모든 글자를 선택
         tokens    = tokenizer.sub('', texts)   # 한글과 띄어쓰기를 제외한 모든 부분을 제거
         tokens    = tokens.split(' ')
@@ -33,24 +33,35 @@ def txtnoun(filename , skip=False, tokens=False):
         for token in tokens:
             # skip 대상이 없을 떄
             if skip == False:
-                temp = twitter.nouns(token)
-                if len("".join(temp)) > 1:
-                    sentence.append("".join(temp))
+                # temp = twitter.nouns(token)
+
+                # twitter 기준별 태그 분석객체 생성
+                chk_tok = twitter.pos(token, stem=stem)
+                chk_tok = [temp[0]  for temp in chk_tok   if temp[1] in tags]
+                ckeck = "".join(chk_tok)
+
+                if len(ckeck) > 1:
+                    sentence.append(ckeck)
 
             # skip 내용이 있을 때
             else:
-                if token in list(skip.keys()):
-                    result.append(skip[token])
+                if token.strip() in skip.keys():
+                    result.append(skip[token.strip()])
                 else:
-                    temp = twitter.nouns(token)
-                    if len("".join(temp)) > 1:
-                        sentence.append("".join(temp))
+                    # twitter 기준별 태그 분석객체 생성
+                    chk_tok = twitter.pos(token, stem=stem)
+                    chk_tok = [temp[0] for temp in chk_tok if temp[1] in tags]
+                    ckeck = "".join(chk_tok)
+
+                    # 전처리가 끝난 결과가 skip에 해당여부 판단
+                    if ckeck.strip() in skip.keys():
+                        result.append(skip[ckeck.strip()])
+                    elif len(ckeck) > 1:
+                        sentence.append(ckeck)
 
         # 단락별 작업이 끝난 뒤 '\n'를 덧붙여서 작업을 종료
         temp = "".join(sentence)
-        if len(temp) < 2:
-            pass
-        else:
+        if len(temp) > 1:
             sentence = " ".join(sentence)
             sentence += "\n"
             result.append(sentence)
@@ -100,7 +111,7 @@ def Naver_news_rep(url, flat = True):
         return flatList
 
     else:
-    	return List
+        return List
 
 
 # tf-idf 데이터 값들을 Rank 값으로 변환
