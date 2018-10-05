@@ -23,12 +23,12 @@ from  Conversation import Conversation
 # 대화문에 사용할 one hot encoding 의 Token을 생성한다
 def Make_voc(conv, data_path, voc_path):
     words = []
-    with open(data_path, 'r') as f:
+    with open(data_path, 'r', encoding='utf-8') as f:
         lines = f.read()
         words = conv.Tokenizer(lines)
         words = list(set(words))
 
-    with open(voc_path,'w') as wf:
+    with open(voc_path,'w', encoding='utf-8') as wf:
          for w in words:
             wf.write(w + "\n")
     print("vocabluary's Expliction complete")
