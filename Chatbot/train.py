@@ -8,6 +8,17 @@ from Conversation import Conversation
 checkpoint = tf.train.get_checkpoint_state(config.train_dir)
 checkpoint_path = os.path.join(config.train_dir,config.ckpt_name)
 
+
+# Tensorflow 학습을 위한 모델 저장폴더를 생성한다
+try:
+    if not(os.path.isdir({"model"})):
+        os.makedirs(os.path.join({"model"}))
+except OSError as e:
+    if e.errno != errno.EEXIST:
+        print("Failed to create directory!!!!!")
+        raise
+
+        
 def train(conv, batch_size,epoch):
 
     model = sequence2sequence(conv.voc_size)
