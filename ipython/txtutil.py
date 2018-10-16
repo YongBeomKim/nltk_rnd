@@ -1,6 +1,6 @@
 # 텍스트를 줄단위로 끊어서 불러온뒤
 # Token 단위로, 한글명사들을 추출한다
-def txtnoun(filename , skip=False, tags=['Noun'], stem=True, tokens=False):
+def txtnoun(filename , skip=False, tags=['Noun'], stem=True, set_tokens=False):
 
     try:
         # konlpy 0.4.4 이하인 경우
@@ -24,13 +24,13 @@ def txtnoun(filename , skip=False, tags=['Noun'], stem=True, tokens=False):
 
     result = []
     for content in contents:
-        texts     = content.replace('\n', '') # 해당줄의 줄바꿈 내용 제거
-        tokenizer = re.compile(r'[^ ㄱ-힣]+')   # 한글과 띄어쓰기를 제외한 모든 글자를 선택
-        tokens    = tokenizer.sub('', texts)   # 한글과 띄어쓰기를 제외한 모든 부분을 제거
-        tokens    = tokens.split(' ')
-        sentence  = []
+        texts      = content.replace('\n', '') # 해당줄의 줄바꿈 내용 제거
+        tokenizer  = re.compile(r'[^ ㄱ-힣]+')   # 한글과 띄어쓰기를 제외한 모든 글자를 선택
+        token_data = tokenizer.sub('', texts)   # 한글과 띄어쓰기를 제외한 모든 부분을 제거
+        token_data = token_data.split(' ')
+        sentence   = []
 
-        for token in tokens:
+        for token in token_data:
             # skip 대상이 없을 떄
             if skip == False:
                 # temp = twitter.nouns(token)
@@ -66,7 +66,13 @@ def txtnoun(filename , skip=False, tags=['Noun'], stem=True, tokens=False):
             sentence += "\n"
             result.append(sentence)
 
-    return " ".join(result)
+    if set_tokens == True:
+        from nltk.tokenize import word_tokenize
+        set_token = word_tokenize(" ".join(result))
+        return list(set(set_token))
+
+    else:
+        return " ".join(result)
 
 
 
